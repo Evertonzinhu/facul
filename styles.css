@@ -1,0 +1,126 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    padding: 2rem;
+}
+
+/* Estilo para a imagem da postura em pé */
+#postura img:first-of-type {
+    width: 10%; /* Ajusta a imagem de postura em pé para 60% do tamanho disponível */
+    max-width: 500px; /* Limita a largura máxima da imagem */
+    cursor: pointer; /* Indica que a imagem é clicável */
+    transition: transform 0.3s ease; /* Efeito suave ao passar o mouse */
+}
+
+/* Efeito de hover sobre a imagem da postura em pé */
+#postura img:first-of-type:hover {
+    transform: scale(1.05); /* Levemente aumenta o tamanho da imagem ao passar o mouse */
+}
+
+/* Estilo para a imagem "Exemplo de postura correta" */
+.image-container img {
+    width: 100%; /* Ajusta a imagem para o tamanho máximo disponível dentro do contêiner */
+    max-width: 500px; /* Limita a largura máxima da imagem */
+    cursor: pointer; /* Indica que a imagem é clicável */
+    transition: transform 0.3s ease; /* Efeito suave ao passar o mouse */
+}
+
+/* Efeito de hover sobre a imagem "Exemplo de postura correta" */
+.image-container img:hover {
+    transform: scale(1.05); /* Levemente aumenta o tamanho da imagem ao passar o mouse */
+}
+
+/* Estilo para o lightbox */
+.lightbox {
+    display: none; /* Inicialmente escondido */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro */
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 80%; /* Limita a largura da imagem maior */
+    max-height: 80%; /* Limita a altura da imagem maior */
+    border: 2px solid white;
+}
+
+/* Estilo para o botão de fechar */
+.lightbox .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilo para a seção de multimídia */
+#multimidia {
+    background-color: #e8f5e9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+/* Seção de ajuste de imagem */
+#ajuste-imagem {
+    background-color: #f0f0f0;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+}
+
+#ajuste-imagem h3 {
+    margin-top: 0;
+}
+
+#ajuste-imagem .slider-container {
+    margin-top: 10px;
+}
+
+/* Estilo para o controle deslizante (slider) */
+#ajuste-imagem input[type="range"] {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 10px;
+}
+
+/* Estilo para exibir o tamanho da imagem em tempo real */
+#ajuste-imagem .slider-value {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+}

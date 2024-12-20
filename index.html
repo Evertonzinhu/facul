@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ErgoBem - Saúde e Ergonomia</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilo para a imagem */
+        .image-container img {
+            width: 100%; /* Ajusta a imagem para o tamanho máximo disponível dentro do contêiner */
+            max-width: 800px; /* Limita a largura máxima da imagem para 800px */
+            cursor: pointer; /* Indica que a imagem é clicável */
+            transition: transform 0.3s ease; /* Efeito suave ao passar o mouse */
+        }
+
+        /* Efeito de hover sobre a imagem */
+        .image-container img:hover {
+            transform: scale(1.05); /* Levemente aumenta o tamanho ao passar o mouse */
+        }
+
+        /* O lightbox (imagem maior) */
+        .lightbox {
+            display: none; /* Inicialmente escondido */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 80%; /* Limita a largura da imagem maior */
+            max-height: 80%; /* Limita a altura da imagem maior */
+            border: 2px solid white;
+        }
+
+        /* Estilo para o botão de fechar */
+        .lightbox .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        /* Estilo para a imagem da postura em pé */
+        #postura img:first-of-type {
+            width: 14%; /* Ajusta a imagem de Postura em pé*/
+            max-width: 500px; /* Limita a largura máxima da imagem */
+            cursor: pointer; /* Indica que a imagem é clicável */
+            transition: transform 0.3s ease; /* Efeito suave ao passar o mouse */
+        }
+
+        /* Efeito de hover sobre a imagem da postura em pé */
+        #postura img:first-of-type:hover {
+            transform: scale(1.05); /* Levemente aumenta o tamanho da imagem ao passar o mouse */
+        }
+
+        /* Estilo para a imagem "Exemplo de postura correta sentada" */
+        .image-container img {
+            width: 30%; /* Ajusta a imagem para o tamanho máximo disponível dentro do contêiner */
+            max-width: 800px; /* Limita a largura máxima da imagem */
+            cursor: pointer; /* Indica que a imagem é clicável */
+            transition: transform 0.3s ease; /* Efeito suave ao passar o mouse */
+        }
+
+        /* Efeito de hover sobre a imagem "Exemplo de Postura correta sentada" */
+        .image-container img:hover {
+            transform: scale(1.05); /* Levemente aumenta o tamanho da imagem ao passar o mouse */
+        }
+
+        /* Estilo para o lightbox */
+        .lightbox {
+            display: none; /* Inicialmente escondido */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 80%; /* Limita a largura da imagem maior */
+            max-height: 80%; /* Limita a altura da imagem maior */
+            border: 2px solid white;
+        }
+
+        /* Estilo para o botão de fechar */
+        .lightbox .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ErgoBem</h1>
+        <p>Guia interativo para práticas de ergonomia e saúde no trabalho</p>
+    </header>
+    <main>
+        <section id="introducao">
+            <h2>Bem-vindo ao ErgoBem</h2>
+            <p>Este site foi criado para ajudar você a adotar práticas ergonômicas que melhoram sua saúde e bem-estar no trabalho. Aqui, você encontrará orientações sobre postura correta, alongamentos e a importância de pausas regulares.</p>
+        </section>
+        <section id="postura">
+            <h2>Postura em pé</h2>
+            <img src="https://www.dredgarutino.com.br/wp-content/uploads/2020/11/postura-correta-de-pe.jpg" alt="Demonstração de postura correta" onclick="openLightbox(this)">
+            <p>Manter uma postura correta ao ficar em pé é fundamental para evitar dores e lesões. Mantenha os pés alinhados com os ombros, os joelhos levemente flexionados e as costas retas, evitando curvar-se para frente.</p>
+        </section>
+        <section id="alongamentos">
+            <h2>Técnicas de Alongamento</h2>
+            <p>Pratique os seguintes alongamentos simples durante o dia:</p>
+            <ul>
+                <li>Alongue os braços acima da cabeça.</li>
+                <li>Rotacione os ombros para aliviar tensões.</li>
+                <li>Incline suavemente o pescoço para os lados.</li>
+            </ul>
+        </section>
+        <section id="pausas">
+            <h2>Importância das Pausas</h2>
+            <p>Fazer pequenas pausas durante a jornada de trabalho ajuda a reduzir a fadiga e melhora a concentração. Tente se levantar para tomar uma água, ir ao banheiro ou tomar um café, você pode escolher, o importante é fazer a cada hora.</p>
+        </section>
+        <section id="multimidia">
+            <h2>Recursos Multimídia</h2>
+            <p>Abaixo estão vídeos e imagens que complementam as práticas de ergonomia. Você pode assistir diretamente aqui no site:</p>
+            <div class="video-container">
+                <h3>Exercícios simples para melhorar a postura:</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/00dOJeGMdb4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-container">
+                <h3>Alongamentos importantes:</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/0R7OC4N5oD4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="image-container">
+                <h3>Postura correta sentada:</h3>
+                <!-- Clique na imagem para abrir em um lightbox -->
+                <img src="https://www.atec.com.br/blog/wp-content/uploads/2020/12/ergonomia-2-888x1024-1.jpg.webp" alt="Exemplo de postura correta" onclick="openLightbox(this)">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Desenvolvido por Everton Araujo Cerqueira | RU: 4940235</p>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <button class="close-btn" onclick="closeLightbox()">×</button>
+        <img id="lightbox-image" src="" alt="Imagem maior">
+    </div>
+
+    <script>
+        // Função para abrir o lightbox
+        function openLightbox(img) {
+            var lightbox = document.getElementById('lightbox');
+            var lightboxImage = document.getElementById('lightbox-image');
+            lightbox.style.display = 'flex'; // Exibe o lightbox
+            lightboxImage.src = img.src; // Define a imagem maior no lightbox
+        }
+
+        // Função para fechar o lightbox
+        function closeLightbox() {
+            var lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none'; // Esconde o lightbox
+        }
+    </script>
+</body>
+</html>
